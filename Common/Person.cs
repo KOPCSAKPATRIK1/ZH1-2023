@@ -19,4 +19,9 @@ public class Person
     {
         return new Person("Kopcsak Patrik", 22, 183);
     }
+
+    public override string? ToString()
+    {
+        return $"{Name}, {Age} éves, {Height} cm magas";
+    }
 }
