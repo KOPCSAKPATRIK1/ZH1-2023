@@ -11,7 +11,10 @@ public class AdvancedPersonSource : IPersonSource
 
     public IEnumerable<Person> GetPersons()
     {
-       return _persons;
+        foreach (var person in _persons) 
+        { 
+            yield return person;
+        }
     }
 
     public void Add(string name, int age, int height)
