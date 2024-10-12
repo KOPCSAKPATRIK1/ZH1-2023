@@ -2,6 +2,7 @@
 
 public class TrivialPersonSource : IPersonSource
 {
+    List<Person> _persons = new List<Person>();
     private int _n;
 
     public TrivialPersonSource(int n)
@@ -11,11 +12,9 @@ public class TrivialPersonSource : IPersonSource
 
     public IEnumerable<Person> GetPersons()
     {
-        List<Person> persons = new List<Person>();
         for (int i = 0; i < _n; i++)
         {
-            persons.Add(Person.GetMe());
+            yield return Person.GetMe();
         }
-        return persons;
     }
 }
